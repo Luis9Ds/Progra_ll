@@ -4,6 +4,10 @@
     {% for campo in formulario %}
     <div class="mb-3">
         <label for="">{{campo.label}}</label>
+
+        {% if campo.field.widget.input_type == 'file' and campo.value %}
+        <img src="{{ campo.value.url }}" height="100">
+        {% endif %}
         <input
         type="{{ campo.field.widget.input_type }}"
         class="form-control"
