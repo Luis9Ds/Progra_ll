@@ -8,6 +8,7 @@ urlpatterns = [
     path('nosotros/', views.nosotros, name='nosotros'),
     path('peliculas/', views.peliculas, name='peliculas'),
     path('peliculas/crear', views.crear, name='crear'),
-    path('peliculas/editar', views.editar, name='editar'),
+    path('peliculas/editar/<int:id>', views.editar, name='editar'),
+    path('peliculas/form', views.form, name='forms'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Esto es para agregar imagenes
