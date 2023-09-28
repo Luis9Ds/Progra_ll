@@ -12,3 +12,9 @@ def inicio(request):
 def peliculas(request):
     peliculas = Pelicula.objects.all()
     return render(request, "peliculas/index.html", {"peliculas":peliculas})
+
+def crear(request):
+    return render(request, "peliculas/crear.html")
+
+def editar(request):
+    return render(request, "peliculas/editar.html")
