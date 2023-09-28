@@ -31,3 +31,8 @@ def editar(request, id):
 
 def form(request):
     return render(request, "peliculas/form.html")
+
+def eliminar(request, id):
+    pelicula = Pelicula.objects.get(id=id)
+    pelicula.delete()
+    return redirect('peliculas')

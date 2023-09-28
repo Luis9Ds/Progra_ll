@@ -10,5 +10,5 @@ urlpatterns = [
     path('peliculas/crear', views.crear, name='crear'),
     path('peliculas/editar/<int:id>', views.editar, name='editar'),
     path('peliculas/form', views.form, name='forms'),
-
+    path('peliculas/eliminar/<int:id>', views.eliminar, name='eliminar'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Esto es para agregar imagenes
