@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path , include
 from . import views
 
 from django.conf import settings
@@ -11,4 +11,5 @@ urlpatterns = [
     path('peliculas/editar/<int:id>', views.editar, name='editar'),
     path('peliculas/form', views.form, name='forms'),
     path('peliculas/eliminar/<int:id>', views.eliminar, name='eliminar'),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #Esto es para agregar imagenes

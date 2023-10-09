@@ -20,6 +20,20 @@
             <a class="nav-item nav-link" href="{% url 'inicio' %}">Inicio</a>
             <a class="nav-item nav-link" href="{% url 'peliculas' %}">Peliculas</a>
             <a class="nav-item nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+              <a href="{% url 'logout' %}">Cerrar Sesión///</a>
+            </li>
+            <li>
+              <a href="#">@{{ user.username }}</a>
+            </li>
+            {% else %}
+            <li>
+              <a href="{% url 'login' %}">Iniciar Sesión</a>
+            </li>
+
+            {% endif %}
         </div>
     </nav>
   </header>
